@@ -1,0 +1,21 @@
+<div class="p-3 bg-secondary-subtle border border-secondary-subtle rounded-3">    
+    <p class="fw-semibold fs-5 my-4">Tarefas cadastradas: {{total}}</p>
+    <p class="fw-semibold fs-6">Tarefas marcadas: {{marcada}}</p>
+    <div class="progress" role="progressbar" aria-valuenow="{{marcada_p}}" aria-valuemin="0" aria-valuemax="100"
+        style="height: 25px">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: {{marcada_p}}%">
+            {{marcada_p}}%</div>
+    </div>
+    <p class="fw-semibold fs-6 mt-4">Tarefas realizadas: {{realizada}}</p>
+    <div class="progress" role="progressbar" aria-valuenow="{{realizada_p}}" aria-valuemin="0" aria-valuemax="100"
+        style="height: 25px">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: {{realizada_p}}%">
+            {{realizada_p}}%</div>
+    </div>
+    <p class="fw-semibold fs-6 mt-4">Tarefas pendentes: {{pendente}}</p>
+    <div class="progress mb-5" role="progressbar" aria-valuenow="{{pendente_p}}" aria-valuemin="0" aria-valuemax="100"
+        style="height: 25px">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: {{pendente_p}}%">
+            {{pendente_p}}%</div>
+    </div>
+</div>

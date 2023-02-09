@@ -1,0 +1,33 @@
+<nav class="border rounded pt-3 px-3 mb-3 bg-info" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb" style="--bs-breadcrumb-divider-color: --bs-body-bg;">
+        <li class="breadcrumb-item"><a href="/" class="text-white">Tarefas</a></li>
+        <li class="breadcrumb-item text-white active" aria-current="page">Editar</li>
+    </ol>
+</nav>
+<div class="border rounded p-4">
+    <p class="fw-semibold fs-6 mb-4">Editar tarefa</p>
+    {{>_msg}}
+    <form action="/tarefa/editar/{{tarefa.id}}" method="post" id="formTarefa">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título..."
+                value="{{tarefa.titulo}}"> <label for="titulo">Título</label>
+            <div class="invalid-feedback" id="erro_titulo"></div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descrição..."
+                value="{{tarefa.descricao}}"> <label for="descricao">Descrição</label>
+            <div class="invalid-feedback" id="erro_descricao"></div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="data" name="data" placeholder="Data..."
+                value="{{formatDate tarefa.data " YYYY-MM-DD"}}"> <label for="data">Data</label>
+            <div class="invalid-feedback" id="erro_data"></div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="time" class="form-control" id="hora" name="hora" placeholder="Hora..."
+                value="{{formatDate tarefa.hora " HH:mm"}}"> <label for="hora">Hora</label>
+            <div class="invalid-feedback" id="erro_hora"></div>
+        </div>
+    </form>
+    <button class="btn btn-dark" onclick="validarTarefa()">Editar</button>
+</div>
